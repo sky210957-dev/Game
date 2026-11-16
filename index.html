@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pok Pok Web Clone</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="game-container">
+    <header>
+      <h1>🥚 Pok Pok Clone</h1>
+      <div class="stats">
+        <div class="stat"><span>💰</span> <span id="coins">0</span></div>
+        <div class="stat"><span>⚡</span> <span id="energy">100</span></div>
+        <div class="stat"><span>🏆</span> Level <span id="level">1</span></div>
+      </div>
+    </header>
+
+    <main>
+      <section class="main-pok">
+        <div id="pok-area">
+          <button id="pok-btn" class="pok-button">
+            <span class="egg">🥚</span>
+          </button>
+          <div id="click-feedback"></div>
+        </div>
+        <div class="progress-wrap">
+          <div id="progress-bar"></div>
+        </div>
+        <p id="hint">แตะไข่เพื่อรับเหรียญ!</p>
+      </section>
+
+      <aside class="shop">
+        <h2>🛒 ร้านค้า</h2>
+        <div id="shop-items"></div>
+        <h2>🏅 อัปเกรด</h2>
+        <div id="upgrade-items"></div>
+      </aside>
+    </main>
+
+    <footer>
+      <button id="reset-btn">🔄 รีเซ็ตเกม</button>
+      <button id="save-btn">💾 บันทึก</button>
+    </footer>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
