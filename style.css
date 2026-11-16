@@ -1,0 +1,211 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  color: #fff;
+}
+
+#game-container {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 20px;
+  max-width: 900px;
+  width: 100%;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+header h1 {
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 24px;
+}
+
+.stats {
+  display: flex;
+  justify-content: space-around;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  border-radius: 12px;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.stat {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.main-pok {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 16px;
+  padding: 20px;
+  position: relative;
+}
+
+#pok-area {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pok-button {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  border: 6px solid #fff;
+  background: radial-gradient(circle at 30% 30%, #ffe680, #ffb300);
+  cursor: pointer;
+  font-size: 80px;
+  transition: transform 0.1s ease;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  user-select: none;
+}
+
+.pok-button:active {
+  transform: scale(0.92);
+}
+
+.pok-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+#click-feedback {
+  position: absolute;
+  top: 20px;
+  font-size: 22px;
+  font-weight: bold;
+  color: #ffe680;
+  pointer-events: none;
+  text-shadow: 0 2px 6px #000;
+  animation: floatUp 0.8s ease-out forwards;
+}
+
+@keyframes floatUp {
+  to {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+}
+
+.progress-wrap {
+  width: 100%;
+  height: 12px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 6px;
+  margin-top: 15px;
+  overflow: hidden;
+}
+
+#progress-bar {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #4facfe, #00f2fe);
+  transition: width 0.2s;
+}
+
+#hint {
+  margin-top: 10px;
+  font-size: 13px;
+  text-align: center;
+  opacity: 0.8;
+}
+
+.shop {
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 16px;
+  padding: 15px;
+  max-height: 450px;
+  overflow-y: auto;
+}
+
+.shop h2 {
+  font-size: 16px;
+  margin: 10px 0;
+}
+
+.shop-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 8px;
+  font-size: 13px;
+}
+
+.shop-item button {
+  background: #4CAF50;
+  color: #fff;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.2s;
+}
+
+.shop-item button:hover {
+  background: #45a049;
+}
+
+.shop-item button:disabled {
+  background: #666;
+  cursor: not-allowed;
+}
+
+footer {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+  justify-content: center;
+}
+
+footer button {
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+footer button:hover {
+  background: rgba(255, 255, 255, 0.35);
+}
+
+@media (max-width: 700px) {
+  main {
+    grid-template-columns: 1fr;
+  }
+  .shop {
+    max-height: none;
+  }
+}
